@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import servidor from "./servidor.js";
 import mongoose from "mongoose";
 import "dotenv/config.js";
@@ -18,3 +19,22 @@ mongoose.connect(URI)
     console.error("Error de conexión:", error);
   });
 
+=======
+import "dotenv/config";
+import "./conexion.js";
+import servidor from "./servidor.js";
+
+// Escucha en todas las interfaces (requerido para acceso externo desde Nginx)
+servidor.listen(3000, '0.0.0.0', () => {
+    console.log("✅ El servidor está escuchando en http://0.0.0.0:3000");
+    // Ruta de prueba (sanity check)
+servidor.get("/prueba", (req, res) => {
+  res.send("✅ Servidor activo");
+});
+
+servidor.listen(PUERTO, HOST, () => {
+  console.log(`✅ Servidor escuchando en http://${HOST}:${PUERTO}`);
+  console.log("👉 Prueba: curl http://localhost:" + PUERTO + "/prueba");
+});
+});
+>>>>>>> 4063cb4d20f259263a485478bc4ef0b7056fba17
