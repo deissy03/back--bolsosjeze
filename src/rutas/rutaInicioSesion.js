@@ -1,9 +1,10 @@
-import { Router } from 'express';
-import ControladorInicioSesion from '../controladores/controladorInicioSesion.js';
+// src/rutas/rutaInicioSesion.js
+import express from "express";
+import ControladorInicioSesion from "../controladores/controladorInicioSesion.js";
 
-const enrutadorInicioSesion = Router();
+const enrutadorInicioSesion = express.Router();
 
-enrutadorInicioSesion.post('/', ControladorInicioSesion.iniciarSesion);
-enrutadorInicioSesion.get('/:token', ControladorInicioSesion.validarToken);
+// Ruta para iniciar sesión
+enrutadorInicioSesion.post("/", ControladorInicioSesion.iniciarSesion);
 
 export default enrutadorInicioSesion;
