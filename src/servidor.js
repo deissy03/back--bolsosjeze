@@ -1,9 +1,6 @@
 import path from "path";
-<<<<<<< HEAD
 import express from "express";
-=======
 import express from "express";  
->>>>>>> 4063cb4d20f259263a485478bc4ef0b7056fba17
 import morgan from "morgan";
 import cors from "cors";
 
@@ -14,7 +11,6 @@ import enrutadorProductos from "./rutas/rutaProductos.js";
 
 const servidor = express();
 
-<<<<<<< HEAD
 // Configuración CORS para permitir solo tu frontend
 servidor.use(cors({
   origin: (origin, callback) => {
@@ -50,21 +46,18 @@ servidor.get('/', (req, res) => {
 });
 
 export default servidor;
-=======
 // Middlewares
 servidor.use(cors());
 servidor.use(morgan("dev"));
 servidor.use(express.json());
->>>>>>> 4063cb4d20f259263a485478bc4ef0b7056fba17
+
 
 // Rutas principales
 servidor.use('/productos', enrutadorProductos);
 servidor.use('/usuarios', enrutadorUsuarios);
 servidor.use('/inicio-sesion', enrutadorInicioSesion);
 
-<<<<<<< HEAD
 
-=======
 // Rutas públicas para imágenes
 servidor.use('/imagenes', express.static(path.resolve('imagenes')));
 
@@ -82,4 +75,4 @@ servidor.get('/prueba', (req, res) => {
 });
 
 export default servidor;
->>>>>>> 4063cb4d20f259263a485478bc4ef0b7056fba17
+

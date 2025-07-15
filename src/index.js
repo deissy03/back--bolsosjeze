@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import servidor from "./servidor.js";
 import mongoose from "mongoose";
 import "dotenv/config.js";
@@ -19,7 +19,6 @@ mongoose.connect(URI)
     console.error("Error de conexión:", error);
   });
 
-=======
 import "dotenv/config";
 import "./conexion.js";
 import servidor from "./servidor.js";
@@ -37,4 +36,4 @@ servidor.listen(PUERTO, HOST, () => {
   console.log("👉 Prueba: curl http://localhost:" + PUERTO + "/prueba");
 });
 });
->>>>>>> 4063cb4d20f259263a485478bc4ef0b7056fba17
+
